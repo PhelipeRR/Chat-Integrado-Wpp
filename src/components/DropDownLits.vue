@@ -89,11 +89,10 @@ const isDark = computed(()=>{
 
 const sendLocation = async (adress: any, descricao: any) => {
     try {
-        const apiKey = 'AIzaSyBmn-rkxCUD6zUWBVg2E3iDU4L3KgN-upo';
+        const apiKey = '...';
         const url = `https://maps.googleapis.com/maps/api/geocode/json?key=${apiKey}&address=${adress}`;
         const response = await axios.get(url);
         const result = response.data;
-        console.log(response.data);
         if (result.status === 'OK') {
             const msg = {
                 latitude: result.results[0].geometry.location.lat,
